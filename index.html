@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Globe Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/globe.gl"></script>
+  </head>
+  <body>
+    <div class="scanlines"></div>
+    <header>
+      <h1>Daszhboord // Matrix Globe</h1>
+      <p>Live cyber + wereldnieuws dashboard met gratis databronnen.</p>
+    </header>
+
+    <main>
+      <section class="panel globe-panel">
+        <h2>World Globe</h2>
+        <div id="globeViz"></div>
+      </section>
+
+      <section class="panel news-panel">
+        <div class="feed-grid">
+          <div>
+            <h2>Cyber nieuws</h2>
+            <ul id="cyberFeed" class="feed-list"></ul>
+          </div>
+          <div>
+            <h2>Wereldnieuws</h2>
+            <ul id="worldFeed" class="feed-list"></ul>
+          </div>
+          <div>
+            <div class="feed-header">
+              <h2>Custom Reddit feed</h2>
+              <form id="redditForm">
+                <label for="subredditInput" class="sr-only">Subreddit naam</label>
+                <input id="subredditInput" name="subreddit" placeholder="bijv. netsec" required />
+                <button type="submit">Toevoegen</button>
+              </form>
+            </div>
+            <ul id="customFeed" class="feed-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Bronnen: Reddit JSON feeds + REST Countries (gratis, zonder API key).
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
